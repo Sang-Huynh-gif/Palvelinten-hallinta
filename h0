@@ -1,0 +1,19 @@
+x) - Artikkelissa vuokrataan oikea virtuaalipalvelin DigitalOceanilta, koska GitHub education tarjosi sen ilmaiseksi. Muuten valinta olisi suomalainen UpCloud
+
+Asennuksen jälkeen palvelin suojattiin palomuurilla terminaalista käsin
+
+Lokeista selvisi, että palvelimeen oli yritetty ottaa yhteyttä Kiinasta.
+
+Oma huomio, riittääkö pelkkä palomuuri, kun SSH-portti on joka tapauksessa auki?
+
+Namecheap valittiin koska sen hinta on edullista Domain aleksipartanen.space maksoi vain 0,83€/vuodessa.
+
+DNS-asetukset: domain list -> advanced dns -> host records. CNAME-tietue poistettu ja tilalle lisätty A record, joka osoittaa virtuaalipalvelimen IP:hen.
+
+Oma huomio, lisättiinkö A-tietueen sekä @ että www-hostille?
+
+c) Alkutoimesta tein ssh root@palvelimen_IP, adduser sang ja user mod -ag sudo sang. Asensin tulimuurin SSH:lle (sudo apt update, sudo apt install ufo, sudo ufo allow 22/tcp. Päivitin ja boottasin ohjelman sen jälkeen.
+
+d) Asensin koneelleni webbipalvelimen apachen.
+
+e) Lisäsin rekisteröijän DNS-hallintaan A-tietue.
